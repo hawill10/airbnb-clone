@@ -1,5 +1,5 @@
-from django.db.models.query import InstanceCheckMeta
 from django.views.generic import ListView, DetailView
+from django.http import Http404
 from django.urls import reverse
 from django.core.paginator import Paginator
 from django.shortcuts import render
@@ -12,7 +12,7 @@ class HomeView(ListView):
     """HomeView Definition"""
 
     model = models.Room
-    paginate_by = 10
+    paginate_by = 12
     paginate_orphans = 5
     ordering = "created"
     context_object_name = "rooms"
